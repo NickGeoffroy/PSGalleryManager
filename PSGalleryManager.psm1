@@ -1,7 +1,7 @@
 function Start-PSGalleryManager {
     <#
     .SYNOPSIS
-        Launch the PowerShell GUI Module Manager.
+        Launch PSGalleryManager.
     .DESCRIPTION
         Opens a WPF-based graphical tool for managing PowerShell modules.
         Features: Search and install from PSGallery, per-module scope detection,
@@ -54,7 +54,7 @@ if (-not (Test-Path $script:cacheDir)) {
 <Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="PowerShell Module Manager"
+    Title="PSGalleryManager"
     Height="780" Width="1100" MinHeight="600" MinWidth="850"
     WindowStartupLocation="CenterScreen"
     Background="$bgDark" Foreground="$fgPrimary"
@@ -135,9 +135,9 @@ if (-not (Test-Path $script:cacheDir)) {
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="PS" FontSize="18" FontWeight="Bold" Foreground="$accent" Margin="0,0,6,0" VerticalAlignment="Center"/>
-                    <TextBlock Text="Module Manager" FontSize="18" FontWeight="Bold" Foreground="$fgBright" VerticalAlignment="Center"/>
-                    <TextBlock Text="v1.0.3" FontSize="11" Foreground="$fgSecondary" Margin="10,4,0,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="PS" FontSize="18" FontWeight="Bold" Foreground="$accent" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="GalleryManager" FontSize="18" FontWeight="Bold" Foreground="$fgBright" VerticalAlignment="Center"/>
+                    <TextBlock Text="v1.0.4" FontSize="11" Foreground="$fgSecondary" Margin="10,4,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Border Grid.Column="1" Margin="30,0" MaxWidth="550" CornerRadius="4"
                         Background="$bgCard" BorderBrush="$border" BorderThickness="1">
@@ -1091,7 +1091,7 @@ function Invoke-ModuleAction {
         # Update / Uninstall: check if module is AllUsers and user is not admin
         if ($modScope -eq 'AllUsers' -and -not $isAdmin) {
             [System.Windows.MessageBox]::Show(
-                "The module '$name' is installed in AllUsers scope (system-wide).`n`nTo $Action this module, please run PS Module Manager as Administrator.",
+                "The module '$name' is installed in AllUsers scope (system-wide).`n`nTo $Action this module, please run PSGalleryManager as Administrator.",
                 "Administrator Required", 'OK', 'Warning')
             return
         }
@@ -1202,7 +1202,7 @@ $ui.btnUpdateAll.Add_Click({
             $userMods = @($script:updatesCache | Where-Object { $_._Scope -ne 'AllUsers' })
             if ($userMods.Count -eq 0) {
                 [System.Windows.MessageBox]::Show(
-                    "All " + $allUsersMods.Count.ToString() + " module(s) with updates are installed in AllUsers scope.`n`nPlease run PS Module Manager as Administrator to update them.",
+                    "All " + $allUsersMods.Count.ToString() + " module(s) with updates are installed in AllUsers scope.`n`nPlease run PSGalleryManager as Administrator to update them.",
                     "Administrator Required", 'OK', 'Warning')
                 return
             }
@@ -1317,7 +1317,7 @@ $ui.btnBatchUpdate.Add_Click({
 
     if ($skipped.Count -gt 0 -and $toUpdate.Count -eq 0) {
         [System.Windows.MessageBox]::Show(
-            "All " + $skipped.Count.ToString() + " selected module(s) are AllUsers scope.`n`nPlease run PS Module Manager as Administrator to update them.",
+            "All " + $skipped.Count.ToString() + " selected module(s) are AllUsers scope.`n`nPlease run PSGalleryManager as Administrator to update them.",
             "Administrator Required", 'OK', 'Warning')
         return
     }
@@ -1386,7 +1386,7 @@ $ui.btnBatchUninstall.Add_Click({
 
     if ($skipped.Count -gt 0 -and $toRemove.Count -eq 0) {
         [System.Windows.MessageBox]::Show(
-            "All " + $skipped.Count.ToString() + " selected module(s) are AllUsers scope.`n`nPlease run PS Module Manager as Administrator to uninstall them.",
+            "All " + $skipped.Count.ToString() + " selected module(s) are AllUsers scope.`n`nPlease run PSGalleryManager as Administrator to uninstall them.",
             "Administrator Required", 'OK', 'Warning')
         return
     }
