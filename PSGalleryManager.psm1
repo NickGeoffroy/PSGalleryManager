@@ -41,8 +41,8 @@ $red          = "#E74856"
 $border       = "#3E3E3E"
 $purple       = "#B388FF"
 
-# Cache configuration
-$script:cacheDir  = Join-Path $env:APPDATA "PSGalleryManager"
+# Cache configuration – separate cache per PS major version (5 vs 7 have different module paths)
+$script:cacheDir  = Join-Path $env:APPDATA "PSGalleryManager\PS$($PSVersionTable.PSVersion.Major)"
 $script:cacheInstalled = Join-Path $script:cacheDir "installed.json"
 $script:cacheUpdates   = Join-Path $script:cacheDir "updates.json"
 
