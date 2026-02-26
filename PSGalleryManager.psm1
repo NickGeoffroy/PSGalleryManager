@@ -21,6 +21,9 @@ function Start-PSGalleryManager {
 
 Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase, System.Windows.Forms
 
+# Ensure PowerShellGet is loaded before using its commands
+Import-Module PowerShellGet -ErrorAction SilentlyContinue
+
 # Theme colours
 $accent       = "#0078D4"
 $accentHover  = "#106EBE"
@@ -134,7 +137,7 @@ if (-not (Test-Path $script:cacheDir)) {
                 <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="PS" FontSize="18" FontWeight="Bold" Foreground="$accent" Margin="0,0,6,0" VerticalAlignment="Center"/>
                     <TextBlock Text="Module Manager" FontSize="18" FontWeight="Bold" Foreground="$fgBright" VerticalAlignment="Center"/>
-                    <TextBlock Text="v1.0.2" FontSize="11" Foreground="$fgSecondary" Margin="10,4,0,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="v1.0.3" FontSize="11" Foreground="$fgSecondary" Margin="10,4,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Border Grid.Column="1" Margin="30,0" MaxWidth="550" CornerRadius="4"
                         Background="$bgCard" BorderBrush="$border" BorderThickness="1">

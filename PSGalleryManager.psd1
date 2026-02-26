@@ -1,7 +1,7 @@
 @{
     # Module info
     RootModule        = 'PSGalleryManager.psm1'
-    ModuleVersion     = '1.0.2'
+    ModuleVersion     = '1.0.3'
     GUID              = 'a3f7b2c1-9d4e-4f8a-b6c5-1e2d3f4a5b6c'
     Author            = 'Nick Geoffroy'
     CompanyName       = 'Network-IT BV'
@@ -25,7 +25,8 @@
             ProjectUri   = 'https://github.com/NickGeoffroy/PSGalleryManager'
             LicenseUri   = 'https://opensource.org/licenses/MIT'
             ReleaseNotes = @'
-v1.0.2
+v1.0.3
+- Fix PowerShellGet module loading error on startup
 - Initial public release
 - WPF dark-themed GUI for managing PowerShell modules
 - Search and install modules from PSGallery
