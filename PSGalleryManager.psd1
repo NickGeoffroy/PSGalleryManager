@@ -1,7 +1,7 @@
 @{
     # Module info
     RootModule        = 'PSGalleryManager.psm1'
-    ModuleVersion     = '1.0.4'
+    ModuleVersion     = '1.0.5'
     GUID              = 'a3f7b2c1-9d4e-4f8a-b6c5-1e2d3f4a5b6c'
     Author            = 'Nick Geoffroy'
     CompanyName       = 'Network-IT BV'
@@ -25,6 +25,9 @@
             ProjectUri   = 'https://github.com/NickGeoffroy/PSGalleryManager'
             LicenseUri   = 'https://opensource.org/licenses/MIT'
             ReleaseNotes = @'
+v1.0.5
+- Separate cache per PowerShell version (PS5/PS7) to avoid stale data
+
 v1.0.4
 - Rename all UI and dialog references to PSGalleryManager
 - Fix PowerShellGet module loading error on startup
