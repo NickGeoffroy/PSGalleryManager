@@ -1,7 +1,7 @@
 @{
     # Module info
     RootModule        = 'PSGalleryManager.psm1'
-    ModuleVersion     = '1.0.1'
+    ModuleVersion     = '1.0.2'
     GUID              = 'a3f7b2c1-9d4e-4f8a-b6c5-1e2d3f4a5b6c'
     Author            = 'Nick Geoffroy'
     CompanyName       = 'Network-IT BV'
@@ -25,7 +25,7 @@
             ProjectUri   = 'https://github.com/NickGeoffroy/PSGalleryManager'
             LicenseUri   = 'https://opensource.org/licenses/MIT'
             ReleaseNotes = @'
-v1.3.0
+v1.0.2
 - Initial public release
 - WPF dark-themed GUI for managing PowerShell modules
 - Search and install modules from PSGallery
