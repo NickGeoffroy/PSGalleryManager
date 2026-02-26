@@ -59,3 +59,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 ## Author
 
 Nick Geoffroy - Network-IT BV
+
+## Links
+
+- [GitHub Repository](https://github.com/NickGeoffroy/PSGalleryManager)

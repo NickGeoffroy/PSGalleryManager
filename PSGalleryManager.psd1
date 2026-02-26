@@ -1,7 +1,7 @@
 @{
     # Module info
     RootModule        = 'PSGalleryManager.psm1'
-    ModuleVersion     = '1.0.0'
+    ModuleVersion     = '1.0.1'
     GUID              = 'a3f7b2c1-9d4e-4f8a-b6c5-1e2d3f4a5b6c'
     Author            = 'Nick Geoffroy'
     CompanyName       = 'Network-IT BV'
@@ -22,6 +22,7 @@
     PrivateData = @{
         PSData = @{
             Tags         = @('GUI', 'Module', 'Manager', 'WPF', 'PSGallery', 'Install', 'Update', 'Uninstall', 'PowerShellGet', 'Windows')
+            ProjectUri   = 'https://github.com/NickGeoffroy/PSGalleryManager'
             LicenseUri   = 'https://opensource.org/licenses/MIT'
             ReleaseNotes = @'
 v1.3.0
